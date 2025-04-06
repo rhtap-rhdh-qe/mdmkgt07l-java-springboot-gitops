@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mdmkgt07l-java-springboot-gitops
+  description: This is GitOps manifest for mdmkgt07l-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mdmkgt07l-java-springboot
+    backstage.io/kubernetes-id: mdmkgt07l-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mdmkgt07l-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mdmkgt07l-java-springboot
